@@ -1,8 +1,7 @@
-" 0xTsubi's init.vim 
-
+" personal nvim config
 let mapleader = " "
 
-" Settings
+" settings
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
@@ -34,32 +33,32 @@ set cmdheight=2
 set updatetime=50
 set shortmess+=c
 
-" Plugins
+" plugins
 call plug#begin('~/.vim/plugged')
-" Telescope
+" telescope
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
-" Treesitter
+" treesitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/playground'
-" Colorschemes
+" colorschemes
 Plug 'sainnhe/everforest'
-" Co-pilot
+" co-pilot
 Plug 'github/copilot.vim'
-" Auto-pairs (brackets, quotes, etc)
+" auto-pairs (brackets, quotes, etc)
 Plug 'jiangmiao/auto-pairs'
-" Auto-close tags
+" auto-close tags
 Plug 'windwp/nvim-ts-autotag'
-"Vim-table
+" vim-table
 Plug 'dhruvasagar/vim-table-mode'
 call plug#end()
 
-" Colorscheme
+" colorscheme
 colorscheme everforest
 
-" Remove background
+" remove background
 highlight Normal guibg=none ctermbg=none
 highlight LineNr guibg=none ctermbg=none
 highlight Folded guibg=none ctermbg=none
@@ -69,10 +68,11 @@ highlight VertSplit guibg=none ctermbg=none
 highlight SignColumn guibg=none ctermbg=none
 highlight EndOfBuffer guibg=none ctermbg=none
 
-" Remaps
+" remaps
 nnoremap <leader>ff :Telescope find_files<CR>
 nnoremap <leader>fg :Telescope live_grep<CR>
 nnoremap <leader>fb :Telescope buffers<CR>
 nnoremap <leader>fh :Telescope help_tags<CR>
 
 :lua require('nvim-ts-autotag').setup()
+:lua require('plugins')
